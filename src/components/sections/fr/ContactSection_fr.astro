@@ -38,8 +38,18 @@ const formSubTitle: string =
         >
           {formTitle}
         </h2>
-        <!-- Simple mailto form -->
-        <form id="contact-form-fr" onsubmit="return handleMailtoSubmitFr(event)">
+        <!-- FormSubmit.co form -->
+        <form 
+          id="contact-form-fr" 
+          action="https://formsubmit.co/dlevy.david@gmail.com" 
+          method="POST"
+        >
+          <!-- FormSubmit.co configuration -->
+          <input type="hidden" name="_subject" value="Formulaire de Contact - Nutriwatt" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value={Astro.url.origin + "/fr/contact?success=true"} />
+          <input type="hidden" name="_template" value="box" />
+          
           <div class="grid gap-4">
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <TextInput
@@ -55,8 +65,8 @@ const formSubTitle: string =
                 required
               />
             </div>
-            <EmailContactInput id="hs-email-contacts-fr" required />
-            <PhoneInput id="hs-phone-number-fr" />
+            <EmailContactInput id="hs-email-contacts-fr" name="email" required />
+            <PhoneInput id="hs-phone-number-fr" name="phone" />
             <TextAreaInput
               id="hs-about-contacts-fr"
               label="Détails"
@@ -120,27 +130,3 @@ const formSubTitle: string =
   </div>
 </section>
 
-<script>
-  function handleMailtoSubmitFr(event) {
-    event.preventDefault();
-    const form = event.target;
-    const formData = new FormData(form);
-    
-    const firstName = formData.get('firstName') || '';
-    const lastName = formData.get('lastName') || '';
-    const email = formData.get('hs-email-contacts-fr') || '';
-    const phone = formData.get('hs-phone-number-fr') || '';
-    const message = formData.get('message') || '';
-    
-    const subject = encodeURIComponent(`Formulaire de Contact - ${firstName} ${lastName}`);
-    const body = encodeURIComponent(
-      `Nom: ${firstName} ${lastName}\n` +
-      `Email: ${email}\n` +
-      (phone ? `Téléphone: ${phone}\n` : '') +
-      `\nMessage:\n${message}`
-    );
-    
-    window.location.href = `mailto:raphaellevy027@gmail.com?subject=${subject}&body=${body}`;
-    return false;
-  }
-</script>

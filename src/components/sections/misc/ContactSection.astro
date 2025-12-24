@@ -37,8 +37,18 @@ const formSubTitle: string = "We'll get back to you in 1-2 business days.";
         >
           {formTitle}
         </h2>
-        <!-- Simple mailto form -->
-        <form id="contact-form" onsubmit="return handleMailtoSubmit(event)">
+        <!-- FormSubmit.co form -->
+        <form 
+          id="contact-form" 
+          action="https://formsubmit.co/dlevy.david@gmail.com" 
+          method="POST"
+        >
+          <!-- FormSubmit.co configuration -->
+          <input type="hidden" name="_subject" value="Contact Form - Nutriwatt" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value={Astro.url.origin + "/fr/contact?success=true"} />
+          <input type="hidden" name="_template" value="box" />
+          
           <div class="grid gap-4">
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <TextInput
@@ -54,8 +64,8 @@ const formSubTitle: string = "We'll get back to you in 1-2 business days.";
                 required
               />
             </div>
-            <EmailContactInput id="hs-email-contacts" required />
-            <PhoneInput id="hs-phone-number" />
+            <EmailContactInput id="hs-email-contacts" name="email" required />
+            <PhoneInput id="hs-phone-number" name="phone" />
             <TextAreaInput
               id="hs-about-contacts"
               label="Details"
@@ -119,27 +129,3 @@ const formSubTitle: string = "We'll get back to you in 1-2 business days.";
   </div>
 </section>
 
-<script>
-  function handleMailtoSubmit(event) {
-    event.preventDefault();
-    const form = event.target;
-    const formData = new FormData(form);
-    
-    const firstName = formData.get('firstName') || '';
-    const lastName = formData.get('lastName') || '';
-    const email = formData.get('hs-email-contacts') || '';
-    const phone = formData.get('hs-phone-number') || '';
-    const message = formData.get('message') || '';
-    
-    const subject = encodeURIComponent(`Contact Form - ${firstName} ${lastName}`);
-    const body = encodeURIComponent(
-      `Name: ${firstName} ${lastName}\n` +
-      `Email: ${email}\n` +
-      (phone ? `Phone: ${phone}\n` : '') +
-      `\nMessage:\n${message}`
-    );
-    
-    window.location.href = `mailto:raphaellevy027@gmail.com?subject=${subject}&body=${body}`;
-    return false;
-  }
-</script>

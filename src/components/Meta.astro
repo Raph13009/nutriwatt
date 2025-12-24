@@ -73,11 +73,11 @@ const alternateLanguageLinks: string = Object.entries(languages)
   })
   .join("\n");
 
-// Generate and optimize the favicon images (using PNG since we don't have SVG)
+// Generate and optimize the favicon images (using PNG since we don't have SVG) - AGRANDI pour être plus visible dans le navigateur
 const faviconPng = await getImage({
   src: faviconSrc,
-  width: 32,
-  height: 32,
+  width: 256,
+  height: 256,
   format: "png",
 });
 
@@ -146,7 +146,7 @@ const mobileLogo = await getImage({
 
 {/* Links for favicons */}
 <link href="/favicon.ico" rel="icon" sizes="any" type="image/x-icon" />
-<link href={faviconPng.src} rel="icon" type="image/png" sizes="32x32" />
+<link href={faviconPng.src} rel="icon" type="image/png" sizes="256x256" />
 <meta name="mobile-web-app-capable" content="yes" />
 <link href={appleTouchIcon.src} rel="apple-touch-icon" />
 <link href={appleTouchIcon.src} rel="shortcut icon" />

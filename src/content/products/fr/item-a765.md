@@ -1,10 +1,11 @@
 ---
-title: "Usage Alimentation Quotidienne"
-description: "Pour suivre simplement ses calories et macronutriments au quotidien, sans complexité."
+title: "Suivi Alimentaire Quotidien"
+description: "Pour suivre simplement ses calories et macronutriments, jour après jour."
 main:
   id: 2
   content: |
-    Nutriwatt est l'application parfaite pour le suivi quotidien de la santé et de la nutrition. Conçue pour un usage normal au quotidien, elle vous aide à développer des habitudes saines en suivant vos repas, en comprenant votre nutrition et en travaillant vers vos objectifs de bien-être. Simple, intuitive et efficace pour tous ceux qui cherchent à améliorer leur nutrition.
+    Nutriwatt est une application simple et intuitive pour suivre votre alimentation au quotidien.
+    Elle vous aide à comprendre ce que vous mangez, à suivre vos calories et macronutriments, et à construire de meilleures habitudes alimentaires, sans complexité.
   imgCard: "/covers/cover1.png"
   imgMain: "/screens/screen1.png"
   imgAlt: "Interface de l'application mobile Nutriwatt"
@@ -17,11 +18,12 @@ tabs:
     title: "Fonctionnalités"
   - id: "tabs-with-card-item-3"
     dataTab: "#tabs-with-card-3"
-    title: "Avantages"
+    title: "Dans l'application"
 longDescription:
-  title: "Suivi de Santé Simple pour la Vie Quotidienne"
+  title: "Une approche simple de la nutrition"
   subTitle: |
-    Nutriwatt vous apporte les outils essentiels pour une meilleure nutrition dans votre vie quotidienne. Parfait pour tous ceux qui veulent suivre leur nutrition sans complexité, cette application se concentre sur les fondamentaux : enregistrer les repas, comprendre les nutriments et progresser vers vos objectifs de bien-être.
+    Nutriwatt se concentre sur l'essentiel : vous aider à mieux comprendre votre alimentation.
+    Sans surcharge de fonctionnalités, l'application vous permet d'enregistrer vos repas, de visualiser vos apports nutritionnels et de suivre votre évolution dans le temps.
   btnTitle: "Télécharger Gratuitement"
   btnURL: "#"
 descriptionList:
@@ -34,23 +36,23 @@ descriptionList:
   - title: "Retour Simple"
     subTitle: "Recevez des conseils directs sur votre apport nutritionnel et apprenez quels ajustements peuvent vous aider à atteindre vos objectifs."
 specificationsLeft:
-  - title: "Interface Épurée"
-    subTitle: "Design propre et simple qui se concentre sur ce qui compte le plus - vous aider à suivre votre nutrition sans distractions."
-  - title: "Informations Personnelles"
-    subTitle: "Configurez votre profil avec des informations de base comme l'âge, le poids et les objectifs pour obtenir des recommandations personnalisées."
-  - title: "Base de Données Alimentaires"
-    subTitle: "Accédez à une sélection d'aliments courants avec des informations nutritionnelles précises pour un enregistrement rapide des repas."
-  - title: "Suivi de Progression"
-    subTitle: "Surveillez votre nutrition quotidienne et voyez comment vous progressez vers vos objectifs de santé avec des résumés faciles à lire."
+  - title: "Interface claire et lisible"
+    subTitle: "Une interface pensée pour aller droit au but et rendre le suivi alimentaire facile à comprendre."
+  - title: "Profil nutritionnel"
+    subTitle: "Renseignez quelques informations de base pour adapter les repères nutritionnels à votre situation."
+  - title: "Aliments & repas"
+    subTitle: "Ajoutez facilement vos repas et accédez aux informations nutritionnelles essentielles."
+  - title: "Suivi dans le temps"
+    subTitle: "Visualisez l'évolution de vos calories et macronutriments jour après jour."
 specificationsRight:
-  - title: "Sans Complexité"
-    subTitle: "Profitez d'une expérience focalisée sans fonctionnalités avancées qui pourraient sembler accablantes. Parfait pour développer des habitudes saines."
-  - title: "Complètement Gratuit"
-    subTitle: "Commencez avec le suivi de la santé complètement gratuit. Pas d'abonnements, pas de frais cachés - rendant une meilleure nutrition disponible à tous."
-  - title: "Philosophie de Base"
-    subTitle: "Construit sur les mêmes principes que Nutriwatt Sport - vous aider à comprendre votre nutrition et faire de meilleurs choix pour votre santé."
-  - title: "Optimisé Mobile"
-    subTitle: "Conçu pour les appareils mobiles avec une interface intuitive qui rend l'enregistrement de vos repas rapide et pratique."
+  - title: "Simplicité avant tout"
+    subTitle: "Aucune fonctionnalité inutile. Nutriwatt est conçu pour rester simple et agréable à utiliser."
+  - title: "Gratuit et accessible"
+    subTitle: "Utilisez toutes les fonctionnalités de suivi alimentaire sans abonnement ni carte bancaire."
+  - title: "Une base saine"
+    subTitle: "Comprendre ce que vous mangez est la première étape vers de meilleures habitudes alimentaires."
+  - title: "Pensé pour le quotidien"
+    subTitle: "Une expérience fluide et rapide, adaptée à un usage quotidien sur mobile."
 blueprints:
   first: "/screens/screen1.png"
   second: "/screens/screen2.png"

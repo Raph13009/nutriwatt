@@ -1,11 +1,15 @@
 ---
-const { label = Astro.currentLocale === "fr" ? "E-mail" : "Email", id, required = false } = Astro.props;
+const { label = Astro.currentLocale === "fr" ? "E-mail" : "Email", id, name, required = false } = Astro.props;
 
 interface Props {
   label?: string;
   id: string;
+  name?: string;
   required?: boolean;
 }
+
+// Use custom name if provided, otherwise fallback to default
+const inputName = name || (id.includes('fr') ? 'hs-email-contacts-fr' : 'hs-email-contacts');
 ---
 
 <!-- Container for the label and email input field -->
@@ -15,7 +19,7 @@ interface Props {
   <!-- Email input field -->
   <input
     type="email"
-    name={id.includes('fr') ? 'hs-email-contacts-fr' : 'hs-email-contacts'}
+    name={inputName}
     id={id}
     required={required}
     autocomplete="email"

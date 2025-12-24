@@ -8,10 +8,12 @@ const navBarLinks = [
 // An array of links for footer
 const footerLinks = [
   {
-    section: "Resources",
+    section: "Navigation",
     links: [
-      { name: "Documentation", url: "/welcome-to-docs/" },
+      { name: "Home", url: "/" },
       { name: "Products", url: "/products" },
+      { name: "Services", url: "/services" },
+      { name: "Contact", url: "/contact" },
     ],
   },
 ];
