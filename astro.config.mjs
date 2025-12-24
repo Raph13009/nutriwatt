@@ -9,8 +9,10 @@ import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
+  // GitHub Pages configuration
+  base: "/nutriwatt",
+  site: "https://raph13009.github.io",
   // https://docs.astro.build/en/guides/images/#authorizing-remote-images
-  site: "https://screwfast.uk",
   image: {
     domains: ["images.unsplash.com"],
   },

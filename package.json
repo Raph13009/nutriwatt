@@ -7,6 +7,7 @@
     "start": "astro dev",
     "build": "astro check && astro build && node process-html.mjs",
     "preview": "astro preview",
+    "deploy": "npm run build && gh-pages -d dist",
     "astro": "astro"
   },
   "dependencies": {
@@ -35,6 +36,7 @@
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.11",
     "astro-vtbot": "^2.1.9",
+    "gh-pages": "^6.3.0",
     "prettier": "^3.7.4",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
