@@ -1,29 +1,29 @@
 {
-  "subTitle": "Ask us anything about our brand and products, and get factual responses.",
+  "subTitle": "Have questions about Nutriwatt? Find answers to common questions about our health and nutrition tracking apps.",
   "faqs": [
     {
-      "question": "What types of tools are included in the Starter Kit?",
-      "answer": "The Starter Kit features essential hand and power tools for diverse DIY projects, including hammers, drills, screwdrivers, and a variety of fasteners. It's a curated selection to help beginners and experienced DIYers alike tackle most home improvement tasks."
+      "question": "What is the difference between Nutriwatt Sport and Nutriwatt?",
+      "answer": "Nutriwatt Sport is designed for athletes and sport enthusiasts with advanced features including Strava integration, detailed nutrient tracking, personalized recommendations, and activity-based nutrition adjustments. Nutriwatt is our standard app for everyday use, offering essential nutrition tracking features in a simple, intuitive interface perfect for normal daily health tracking."
     },
     {
-      "question": "Can I upgrade from the Starter Kit to the Professional Toolbox?",
-      "answer": "Absolutely! You can upgrade to the Professional Toolbox at any time to access a wider range of high-quality tools, enjoy priority customer support, and receive exclusive content. Contact our support team for a seamless transition."
+      "question": "How does the Strava integration work in Nutriwatt Sport?",
+      "answer": "Nutriwatt Sport seamlessly connects with your Strava account to automatically sync your workout data. The app tracks calories burned during your activities and adjusts your daily nutrition recommendations based on your actual physical activity. This ensures your nutrition goals align perfectly with your training schedule."
     },
     {
-      "question": "What discounts are available for bulk orders through the Professional Toolbox plan?",
-      "answer": "Professional Toolbox members are entitled to exclusive discounts on bulk orders, the percentage of which may vary depending on the order volume. Get in touch with us to discuss your needs, and we'll provide a tailored discount structure."
+      "question": "Is my personal data and nutrition information secure?",
+      "answer": "Yes, absolutely. We take data privacy seriously. All your personal information, nutrition logs, and health data are encrypted and stored securely. We never share your data with third parties, and you have full control over your information at all times."
     },
     {
-      "question": "What kind of customer support can I expect?",
-      "answer": "All our customers receive dedicated email support. With the Starter Kit, you'll receive our standard support, while the Professional Toolbox plan upgrades you to priority support, meaning faster response times and specialized assistance."
+      "question": "Can I use Nutriwatt without being an athlete?",
+      "answer": "Definitely! Nutriwatt is designed for everyone, whether you're a professional athlete, fitness enthusiast, or simply someone looking to improve their nutrition. The app helps you track meals, understand your nutrient intake, and make better food choices regardless of your activity level."
     },
     {
-      "question": "How current are the online resources and tutorials?",
-      "answer": "We regularly update our online resources and tutorials to reflect the latest trends in DIY and construction, as well as introductions to new tools and techniques. Our material aims to be comprehensive and user-friendly for all skill levels."
+      "question": "How accurate are the automatic nutrient calculations?",
+      "answer": "Our app uses a comprehensive food database with verified nutritional information. The calculations for calories, proteins, carbs, fats, and essential nutrients are based on standard nutritional data. For best results, we recommend logging your meals accurately and using the app's food database."
     },
     {
-      "question": "Does ScrewFast offer services for large-scale construction projects?",
-      "answer": "Yes, our Enterprise Solutions are designed for larger companies requiring comprehensive services. We provide consultation, planning, and supply of high-grade tools and materials, as well as staffing solutions for substantial construction needs. Contact us for a customized quote."
+      "question": "Are the Nutriwatt apps free to use?",
+      "answer": "Yes! Both Nutriwatt Sport and Nutriwatt are completely free to download and use. We believe everyone should have access to quality nutrition tracking tools to support their health and wellness journey."
     }
   ]
 }

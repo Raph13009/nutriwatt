@@ -1,6 +1,7 @@
 ---
-// Importing necessary components
-import MainLayout from "@/layouts/MainLayout.astro";
+// Rediriger vers la version française
+return Astro.redirect('/fr/products/', 301);
+---
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import CardSmall from "@components/ui/cards/CardSmall.astro";
 import CardWide from "@components/ui/cards/CardWide.astro";
@@ -23,18 +24,18 @@ const product: CollectionEntry<"products">[] = (
 );
 
 // Define variables for page content
-const title: string = "Products";
+const title: string = "Download Nutriwatt Apps";
 const subTitle: string =
-  "Explore the durability and precision of ScrewFast tools, designed for both professionals and enthusiasts. Each of our products is crafted with precision and built to last, ensuring you have the right tool for every job.";
+  "Download our free mobile apps for health and nutrition tracking. Choose Nutriwatt Sport for athletes with Strava integration, or Nutriwatt for everyday nutrition tracking. Both apps are completely free to download and use.";
 
 // Testimonial data that will be rendered in the component
 const testimonials = [
   // First testimonial data
   {
     content:
-      " \"Since switching to ScrewFast's hardware tools, the efficiency on our construction sites has skyrocketed. The durability of the hex bolts and precision of the machine screws are simply unmatched. It's refreshing to work with a company that truly understands the daily demands of the industry.\" ",
-    author: "Jason Clark",
-    role: "Site Foreman | TopBuild",
+      " \"Nutriwatt Sport has completely transformed how I approach nutrition and training. The Strava integration is seamless, and I love how it automatically adjusts my calorie needs based on my workouts. Finally, an app that understands athletes!\" ",
+    author: "Sarah Martinez",
+    role: "Marathon Runner | Fitness Enthusiast",
     avatarSrc:
       "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
     avatarAlt: "Image Description",
@@ -42,9 +43,9 @@ const testimonials = [
   // Second testimonial data
   {
     content:
-      " \"As an interior designer, I'm always looking for high-quality materials and tools that help bring my visions to life. ScrewFast's mixed screws assortment has been a game-changer for my projects, providing the perfect blend of quality and variety. The outstanding customer support was just the cherry on top!\" ",
-    author: "Maria Gonzalez",
-    role: "Interior Designer | Creative Spaces",
+      " \"As someone new to tracking nutrition, Nutriwatt was perfect for me. It's simple, intuitive, and doesn't overwhelm me with features I don't need. I've lost 15 pounds in 3 months and finally understand what I'm eating!\" ",
+    author: "Michael Chen",
+    role: "Health Journey Beginner",
     avatarSrc:
       "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
     avatarAlt: "Image Description",
@@ -52,19 +53,19 @@ const testimonials = [
   // Third testimonial data
   {
     content:
-      " \"I've been a professional carpenter for over 15 years, and I can sincerely say that ScrewFast's tap bolts and nuts are some of the best I've used. They grip like no other, and I have full confidence in every joint and fixture. Plus, the service is impeccable – they truly care about my project's success.\" ",
-    author: "Richard Kim",
-    role: "Master Carpenter | WoodWright",
+      " \"The automatic nutrient calculation feature is a game-changer. I no longer have to manually calculate everything, and the app tells me exactly what I need to improve. The recommendations are spot-on and have helped me reach my fitness goals faster than I ever imagined.\" ",
+    author: "Emily Johnson",
+    role: "Personal Trainer | Nutrition Coach",
     avatarSrc:
       "https://images.unsplash.com/photo-1474176857210-7287d38d27c6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
     avatarAlt: "Image Description",
   },
 ];
 
-const pageTitle: string = `Products | ${SITE.title}`;
+const pageTitle: string = `Our Apps | ${SITE.title}`;
 const metaDescription =
-  "Explore the durability and precision of ScrewFast tools, designed for both professionals and enthusiasts.";
-const ogTitle = "Hardware Tools | ScrewFast";
+  "Discover our mobile health and nutrition tracking apps designed to help you achieve your fitness goals.";
+const ogTitle = "Health & Nutrition Apps | Nutriwatt";
 ---
 
 <MainLayout
@@ -76,15 +77,15 @@ const ogTitle = "Hardware Tools | ScrewFast";
     "@type": "WebPage",
     "@id": "https://screwfast.uk/products",
     url: "https://screwfast.uk/products",
-    name: "Hardware Tools | ScrewFast",
+    name: "Health & Nutrition Apps | Nutriwatt",
     description:
-      "Explore the durability and precision of ScrewFast tools, designed for both professionals and enthusiasts.",
+      "Discover our mobile health and nutrition tracking apps designed to help you achieve your fitness goals.",
     isPartOf: {
       "@type": "WebSite",
       url: "https://screwfast.uk",
-      name: "ScrewFast",
+      name: "Nutriwatt",
       description:
-        "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs.",
+        "Nutriwatt offers mobile health and nutrition tracking apps to help you achieve your fitness and wellness goals.",
     },
     inLanguage: "en-US",
   }}
@@ -107,18 +108,18 @@ const ogTitle = "Hardware Tools | ScrewFast";
           )
         }
       </div>
-      <PrimaryCTA title="Customer Stories" url="#testimonials" noArrow={true} />
+      <PrimaryCTA title="User Stories" url="#testimonials" noArrow={true} />
     </div>
     {/* Displaying products in alternating styles. Alternative product gets different card styling.
     Maps through all product entries and displays them with either CardSmall or CardWide based on their position. */}
     <section class="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
       {
         product.map((product, index) => {
-          const position = index % 4;
-          if (position === 0 || position === 3) {
-            return <CardSmall product={product} />;
-          } else {
+          // Sport (id 1) gets CardWide, Normal (id 2) gets CardSmall
+          if (product.data.main.id === 1) {
             return <CardWide product={product} />;
+          } else {
+            return <CardSmall product={product} />;
           }
         })
       }
@@ -126,12 +127,12 @@ const ogTitle = "Hardware Tools | ScrewFast";
   </div>
   {/* Features statistics section */}
   <FeaturesStatsAlt
-    title="Why Choose ScrewFast?"
-    subTitle="Transform your ideas into tangible results with ScrewFast tools. Whether you're starting with a sketch on a napkin or diving into a comprehensive construction project, our tools are engineered to help you build with confidence."
+    title="Why Choose Nutriwatt?"
+    subTitle="Transform your health goals into reality with Nutriwatt apps. Whether you're training for a marathon or just starting your wellness journey, our apps are designed to help you make better nutrition choices and achieve lasting results."
     benefits={[
-      "Robust and reliable tools for long-lasting performance.",
-      "Innovative solutions tailored to modern construction needs.",
-      "Customer support dedicated to your project's success.",
+      "Comprehensive nutrition tracking with automatic calculations.",
+      "Seamless Strava integration for athletes and fitness enthusiasts.",
+      "Personalized recommendations based on your goals and activity level.",
     ]}
   />
   {/* Testimonials section */}

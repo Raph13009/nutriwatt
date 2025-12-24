@@ -1,54 +1,57 @@
 ---
-title: "SF-AB A765"
-description: "Ensemble de Vis Assorties"
+title: "Usage Alimentation Quotidienne"
+description: "Pour suivre simplement ses calories et macronutriments au quotidien, sans complexité."
 main:
   id: 2
   content: |
-    Découvrez l'ensemble de vis assorties SF-AB A765 – la solution ultime pour vos besoins de fixation. Ce set complet comprend une grande variété de vis soigneusement sélectionnées pour aborder divers projets avec facilité et précision.
-  imgCard: "@/images/product-image-2.avif"
-  imgMain: "@/images/product-image-main-2.avif"
-  imgAlt: "Boîtes factices de l'ensemble de vis assorties"
+    Nutriwatt est l'application parfaite pour le suivi quotidien de la santé et de la nutrition. Conçue pour un usage normal au quotidien, elle vous aide à développer des habitudes saines en suivant vos repas, en comprenant votre nutrition et en travaillant vers vos objectifs de bien-être. Simple, intuitive et efficace pour tous ceux qui cherchent à améliorer leur nutrition.
+  imgCard: "/covers/cover1.png"
+  imgMain: "/screens/screen1.png"
+  imgAlt: "Interface de l'application mobile Nutriwatt"
 tabs:
   - id: "tabs-with-card-item-1"
     dataTab: "#tabs-with-card-1"
     title: "Description"
   - id: "tabs-with-card-item-2"
     dataTab: "#tabs-with-card-2"
-    title: "Spécifications"
+    title: "Fonctionnalités"
   - id: "tabs-with-card-item-3"
     dataTab: "#tabs-with-card-3"
-    title: "Plans"
+    title: "Avantages"
 longDescription:
-  title: "Solutions Polyvalentes de Fixation"
+  title: "Suivi de Santé Simple pour la Vie Quotidienne"
   subTitle: |
-    L'ensemble de vis assorties SF-AB A765 offre une polyvalence et une commodité inégalées, ce qui en fait le choix idéal pour les amateurs de bricolage et les professionnels. Avec une sélection complète de vis, vous aurez toujours le bon élément de fixation pour chaque tâche.
-  btnTitle: "Contactez les ventes pour en savoir plus"
+    Nutriwatt vous apporte les outils essentiels pour une meilleure nutrition dans votre vie quotidienne. Parfait pour tous ceux qui veulent suivre leur nutrition sans complexité, cette application se concentre sur les fondamentaux : enregistrer les repas, comprendre les nutriments et progresser vers vos objectifs de bien-être.
+  btnTitle: "Télécharger Gratuitement"
   btnURL: "#"
 descriptionList:
-  - title: "Grande Variété"
-    subTitle: "Comprend une gamme diversifiée de types et de tailles de vis pour s'adapter à diverses applications et matériaux."
-  - title: "Facilité d'Utilisation"
-    subTitle: "Chaque vis est conçue pour une installation facile, garantissant une fixation sans tracas à chaque fois."
-  - title: "Commodité"
-    subTitle: "Élimine le besoin de multiples déplacements au magasin de bricolage, économisant temps et effort sur vos projets."
+  - title: "Enregistrement Facile des Repas"
+    subTitle: "Enregistrez rapidement tout ce que vous mangez avec notre interface conviviale. Pas de fonctionnalités compliquées - juste un suivi simple et efficace."
+  - title: "Suivi Nutritionnel de Base"
+    subTitle: "Obtenez des informations nutritionnelles essentielles incluant calories, protéines, glucides et lipides pour vous aider à faire des choix alimentaires éclairés."
+  - title: "Définition d'Objectifs"
+    subTitle: "Définissez vos objectifs de santé et nutrition et suivez votre progression avec des métriques claires et faciles à comprendre."
+  - title: "Retour Simple"
+    subTitle: "Recevez des conseils directs sur votre apport nutritionnel et apprenez quels ajustements peuvent vous aider à atteindre vos objectifs."
 specificationsLeft:
-  - title: "Matériau"
-    subTitle: "Fabriqué à partir de matériaux de haute qualité tels que l'acier inoxydable, assurant durabilité et résistance à la corrosion."
-  - title: "Assortiment"
-    subTitle: "Contient un assortiment généreux de vis, incluant des vis à bois, des vis mécaniques, et des vis pour tôle."
-  - title: "Quantité"
-    subTitle: "Chaque set comprend une quantité suffisante de vis pour gérer une large gamme de projets et de tâches."
-  - title: "Tailles"
-    subTitle: "Disponible en différentes tailles pour s'adapter aux exigences de divers projets, assurant compatibilité et polyvalence."
-tableData:
-  - feature: ["Spécification", "Valeur"]
-    description:
-      - ["Longueur (mm)", "Divers"]
-      - ["Poids (g)", "N/A"]
-      - ["Matériau", "Acier Inoxydable"]
-      - ["Finition", "Assortie"]
-      - ["Contenu du Pack", "Diverses vis dans un ensemble"]
+  - title: "Interface Épurée"
+    subTitle: "Design propre et simple qui se concentre sur ce qui compte le plus - vous aider à suivre votre nutrition sans distractions."
+  - title: "Informations Personnelles"
+    subTitle: "Configurez votre profil avec des informations de base comme l'âge, le poids et les objectifs pour obtenir des recommandations personnalisées."
+  - title: "Base de Données Alimentaires"
+    subTitle: "Accédez à une sélection d'aliments courants avec des informations nutritionnelles précises pour un enregistrement rapide des repas."
+  - title: "Suivi de Progression"
+    subTitle: "Surveillez votre nutrition quotidienne et voyez comment vous progressez vers vos objectifs de santé avec des résumés faciles à lire."
+specificationsRight:
+  - title: "Sans Complexité"
+    subTitle: "Profitez d'une expérience focalisée sans fonctionnalités avancées qui pourraient sembler accablantes. Parfait pour développer des habitudes saines."
+  - title: "Complètement Gratuit"
+    subTitle: "Commencez avec le suivi de la santé complètement gratuit. Pas d'abonnements, pas de frais cachés - rendant une meilleure nutrition disponible à tous."
+  - title: "Philosophie de Base"
+    subTitle: "Construit sur les mêmes principes que Nutriwatt Sport - vous aider à comprendre votre nutrition et faire de meilleurs choix pour votre santé."
+  - title: "Optimisé Mobile"
+    subTitle: "Conçu pour les appareils mobiles avec une interface intuitive qui rend l'enregistrement de vos repas rapide et pratique."
 blueprints:
-  first: "@/images/blueprint-1.avif"
-  second: "@/images/blueprint-2.avif"
+  first: "/screens/screen1.png"
+  second: "/screens/screen2.png"
 ---

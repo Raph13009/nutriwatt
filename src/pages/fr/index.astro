@@ -7,17 +7,16 @@ import ClientsSection from "@components/sections/landing/ClientsSection.astro";
 import FeaturesGeneral from "@components/sections/features/FeaturesGeneral.astro";
 import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
 import TestimonialsSection from "@components/sections/testimonials/TestimonialsSection.astro";
-import PricingSection from "@components/sections/pricing/PricingSection.astro";
 import FAQ from "@components/sections/misc/FAQ.astro";
 import AnnouncementBanner from "@components/ui/banners/AnnouncementBanner.astro";
-import heroImage from "@images/hero-image.avif";
+// Utiliser les screenshots de l'app Nutriwatt
+const heroImage = "/screens/screen1.png"; // Le plus important - Hero
+const featureImage = "/screens/screen2.png"; // Features principales
+const tools = "/screens/screen3.png"; // Interface outils
+const dashboard = "/screens/screen4.png"; // Dashboard nutrition
+const construction = "/screens/screen5.png"; // Le moins important
 import faqs from "@data/fr/faqs.json";
 import features from "@data/fr/features.json";
-import pricing from "@data/fr/pricing.json";
-import featureImage from "@images/features-image.avif";
-import construction from "@images/construction-image.avif";
-import tools from "@images/automated-tools.avif";
-import dashboard from "@images/dashboard-image.avif";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { partnersData } from "@/data_files/constants";
 
@@ -32,116 +31,115 @@ const avatarSrcs: Array<string> = [
 <MainLayout lang="fr">
   <AnnouncementBanner
     btnId="dismiss-button"
-    btnTitle="Découvrez ScrewFast sur GitHub"
-    url="https://github.com/mearashadowfax/ScrewFast"
+    title="Commencez votre parcours santé dès aujourd'hui"
+    btnTitle="Télécharger Gratuitement"
+    url={getRelativeLocaleUrl("fr", "products")}
   />
 
   <HeroSection
-    title=`Équipez vos projets avec <span class="text-yellow-500 dark:text-yellow-400">ScrewFast</span>`
-    subTitle="Outils matériels de haute qualité et services de construction experts pour tous les besoins en projet."
-    primaryBtn="Commencez à explorer"
+    title="Manger. Comprendre. Progresser."
+    useTrueFocus={true}
+    subTitle="Nutriwatt vous aide à suivre vos calories et vos macronutriments au quotidien, avec des ajustements automatiques selon votre activité physique."
+    primaryBtn="Télécharger Gratuitement"
     primaryBtnURL={getRelativeLocaleUrl("fr", "products")}
-    secondaryBtn="Contacter l'équipe commerciale"
-    secondaryBtnURL={getRelativeLocaleUrl("fr", "contact")}
     withReview={true}
     avatars={avatarSrcs}
     rating=`<span class="font-bold">4.8</span> / 5`
     starCount={4}
     reviews=`À partir de plus de <span class="font-bold">12,8k</span> avis`
     src={heroImage}
-    alt="Pile de boîtes de produits ScrewFast contenant des outils matériels assortis"
+    alt="Application mobile Nutriwatt montrant l'interface de suivi nutritionnel"
   />
 
   <ClientsSection
-    title="Faites confiance aux leaders de l'industrie"
-    subTitle="Découvrez la fiabilité choisie par les géants de l'industrie."
+    title={`Conçu pour le <span class="bg-gradient-to-r from-[#3A73C1] via-[#6FAFD6] to-[#7ECBC2] bg-clip-text text-transparent font-bold">quotidien</span> et le <span class="bg-gradient-to-r from-[#3A73C1] via-[#6FAFD6] to-[#7ECBC2] bg-clip-text text-transparent font-bold">sport</span>`}
+    subTitle="Du suivi nutritionnel simple à l'optimisation sportive avancée, Nutriwatt s'adapte à votre niveau et à vos objectifs."
     partners={partnersData}
   />
 
   <FeaturesGeneral
-    title="Répondre aux exigences de l'industrie"
-    subTitle="Chez ScrewFast, nous relevons les défis uniques rencontrés dans les secteurs du matériel et de la construction. Des outils de pointe aux services experts, nous sommes déterminés à vous aider à surmonter les obstacles et à atteindre vos objectifs."
+    title="Une nutrition claire et pilotée"
+    subTitle="Que vous souhaitiez mieux manger au quotidien ou optimiser votre nutrition sportive, Nutriwatt centralise calories, macros et activité physique dans une interface simple et lisible."
     src={featureImage}
-    alt="Produits ScrewFast dans des boîtes flottantes"
+    alt="Fonctionnalités et avantages de l'application Nutriwatt"
     features={features}
   />
 
   <FeaturesNavs
-    title=`Personnalisez les offres de <span class="text-yellow-500 dark:text-yellow-400">ScrewFast</span> pour répondre parfaitement à vos besoins en matériel et en construction.`
+    title="Les fonctionnalités essentielles pour suivre votre nutrition et optimiser vos performances."
     tabs={[
       {
-        heading: "Outils de pointe",
+        heading: "Saisie des repas",
         content:
-          "Optimisez vos projets avec les outils de pointe de ScrewFast. Faites l'expérience d'une efficacité accrue dans la gestion de la construction avec nos solutions automatisées sophistiquées.",
+          "Enregistrez facilement vos repas et visualisez instantanément leur impact sur vos calories et macronutriments.",
         svg: "tools",
         src: tools,
-        alt: "Équipement lourd jaune et noir sur un champ d'herbe brune",
+        alt: "Interface d'enregistrement des repas sur application mobile",
         first: true,
       },
       {
-        heading: "Tableaux de bord intuitifs",
+        heading: "Calories & macronutriments",
         content:
-          "Naviguez facilement avec les tableaux de bord intuitifs de ScrewFast. Configurez et supervisez vos projets de manière transparente, avec des interfaces conviviales conçues pour une gestion efficace des flux de travail rapide et efficace.",
+          "Calories, protéines, glucides, lipides et fibres calculés automatiquement, sans effort.",
         svg: "dashboard",
         src: dashboard,
-        alt: "Capture d'écran ou représentation graphique du tableau de bord intuitif",
+        alt: "Tableau de bord nutritionnel montrant les nutriments calculés",
         second: true,
       },
       {
-        heading: "Fonctionnalités robustes",
+        heading: "Connexion Strava & Garmin",
         content:
-          "Minimisez la complexité, maximisez la productivité. Les fonctionnalités robustes de ScrewFast sont conçues pour rationaliser votre processus de construction, offrant des résultats qui se distinguent par leur excellence.",
+          "Les calories brûlées lors de vos activités sont automatiquement prises en compte pour ajuster vos objectifs.",
         svg: "house",
         src: construction,
-        alt: "Structure métallique grise d'un bâtiment près d'une grue à tour pendant la journée",
+        alt: "Intégration Strava montrant la synchronisation de l'activité et de la nutrition",
       },
     ]}
   />
 
   <TestimonialsSection
-    title="Accélérez vos projets"
-    subTitle="Chez ScrewFast, nous assurons un démarrage rapide avec une configuration de compte instantanée. Découvrez la vitesse de la construction redéfinie."
+    title="Des résultats concrets"
+    subTitle="Nutriwatt aide ses utilisateurs à mieux comprendre leur nutrition et à progresser durablement."
+    ;
     testimonials={[
       {
         content:
-          "ScrewFast a considérablement augmenté l'efficacité de notre projet. La configuration a été instantanée et leurs temps de réponse rapides sont phénoménaux. Vraiment un changement de jeu dans le support matériel et de construction !",
-        author: "Samantha Ruiz",
-        role: "Directrice des opérations | ConstructIt Inc.",
+          "Nutriwatt Sport a complètement changé ma façon d'aborder la nutrition. L'intégration Strava est transparente et les calculs automatiques de nutriments me font gagner tellement de temps. J'ai enfin trouvé une application qui comprend à la fois mes besoins d'entraînement et de nutrition !",
+        author: "Mia Thompson",
+        role: "Triathlète | Coach santé",
         avatarSrc:
           "https://images.unsplash.com/photo-1593104547489-5cfb3839a3b5?q=80&w=1453&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
       },
     ]}
     statistics={[
       {
-        count: "70k+",
+        count: "50k+",
         description:
-          "clients équipés — des bricoleurs aux grandes entreprises de construction",
+          "utilisateurs actifs suivant leur nutrition et atteignant leurs objectifs",
       },
       {
-        count: "35%",
+        count: "85%",
         description:
-          "hausse de l'efficacité des projets avec les outils et services de ScrewFast",
+          "des utilisateurs rapportent une meilleure compréhension de leur apport nutritionnel",
       },
       {
-        count: "15,3%",
+        count: "3,2M",
         description:
-          "réduction des coûts de maintenance rapportée par des clients à long terme",
+          "repas enregistrés et analysés pour aider les utilisateurs à faire de meilleurs choix",
       },
       {
         count: "2x",
         description:
-          "assemblage plus rapide grâce à des solutions de fixation innovantes",
+          "atteinte d'objectifs plus rapide avec des recommandations personnalisées",
       },
     ]}
   />
 
-  <PricingSection pricing={pricing} />
-
-  <FAQ title="Questions<br />fréquemment posées" faqs={faqs} />
+  <FAQ title="Questions<br />courantes" faqs={faqs} />
 
   <HeroSectionAlt
-    title="Construisons ensemble"
-    subTitle="ScrewFast est un modèle open source, méticuleusement conçu avec les frameworks Astro, Tailwind CSS et Preline UI."
-    url="https://github.com/mearashadowfax/ScrewFast"
+    title="Prenez le contrôle de votre nutrition"
+    subTitle="Suivez votre nutrition au quotidien ou optimisez-la avec vos entraînements. Nutriwatt s'adapte à votre mode de vie."
+    url={getRelativeLocaleUrl("fr", "products")}
   />
 </MainLayout>

@@ -4,6 +4,7 @@ import { Image } from "astro:assets";
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import SecondaryCTA from "@components/ui/buttons/SecondaryCTA.astro";
 import ReviewComponent from "@components/ui/blocks/ReviewComponent.astro";
+import TrueFocus from "@components/ui/TrueFocus.tsx";
 
 // Define props from Astro
 const {
@@ -19,7 +20,8 @@ const {
   rating,
   reviews,
   src,
-  alt
+  alt,
+  useTrueFocus = false
 } = Astro.props;
 
 // Define TypeScript interface for props
@@ -37,6 +39,7 @@ interface Props {
   reviews?: string;
   src?: any;
   alt?: string;
+  useTrueFocus?: boolean;
 }
 ---
 
@@ -47,15 +50,32 @@ interface Props {
   <!-- Title and description -->
   <div>
     <!-- Each h1 and p tag renders a portion of the title and subTitle defined above -->
-    <h1
-      class="block text-balance text-3xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 sm:text-4xl lg:text-6xl lg:leading-tight"
-    >
-      <!-- About Fragment: https://docs.astro.build/en/basics/astro-syntax/#fragments -->
-      <Fragment set:html={title} />
-    </h1>
+    {useTrueFocus ? (
+      <div class="mb-6 block text-balance pb-2" style="overflow: visible;">
+        <TrueFocus 
+          sentence={title}
+          separator=". "
+          manualMode={false}
+          blurAmount={5}
+          borderColor="#3A73C1"
+          glowColor="rgba(58, 115, 193, 0.6)"
+          animationDuration={0.5}
+          pauseBetweenAnimations={1}
+          client:load
+        />
+      </div>
+    ) : (
+      <h1
+        class="block text-balance text-3xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-4xl lg:text-6xl lg:leading-[1.1]"
+        style="letter-spacing: -0.02em;"
+      >
+        <!-- About Fragment: https://docs.astro.build/en/basics/astro-syntax/#fragments -->
+        <Fragment set:html={title} />
+      </h1>
+    )}
     {subTitle &&
     <p
-      class="mt-3 text-pretty text-lg leading-relaxed text-neutral-700 dark:text-neutral-400 lg:w-4/5"
+      class="mt-4 text-pretty text-lg leading-relaxed text-neutral-600/80 dark:text-neutral-400/80 lg:max-w-2xl lg:text-xl lg:leading-relaxed"
     >
       {subTitle}
     </p>
@@ -77,17 +97,28 @@ interface Props {
 
   </div>
   <!-- Hero Image Section -->
-  <div class="flex w-full">
-      <div class="top-12 overflow-hidden">
+  <div class="flex w-full items-center justify-center">
+      <div class="w-full max-w-[280px] md:max-w-[320px] lg:max-w-[360px]">
 	{src && alt &&
-	<Image
+	(typeof src === 'string' ? (
+	  <img
+        src={src}
+        alt={alt}
+        class="w-full h-auto object-contain drop-shadow-2xl"
+        draggable={"false"}
+        loading={"eager"}
+        style="background: transparent;"
+	  />
+	) : (
+	  <Image
         src={src}
         alt={alt}
         class="h-full w-full scale-110 object-cover object-center"
         draggable={"false"}
         loading={"eager"}
         format={"avif"}
-	 />
+	  />
+	))
 	}
     </div>
   </div>

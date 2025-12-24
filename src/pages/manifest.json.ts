@@ -1,7 +1,9 @@
 import type { APIRoute, ImageMetadata } from "astro";
 import { getImage } from "astro:assets";
-import icon from "@images/icon.png";
-import maskableIcon from "@images/icon-maskable.png";
+import nutriwattLogo from "@images/nutriwatt-logo.png";
+// Utiliser le logo Nutriwatt pour les icônes
+const icon = nutriwattLogo;
+const maskableIcon = nutriwattLogo;
 
 interface Favicon {
   purpose: 'any' | 'maskable' | 'monochrome';
@@ -44,14 +46,14 @@ export const GET: APIRoute = async () => {
   );
 
   const manifest = {
-    short_name: "ScrewFast",
-    name: "ScrewFast",
+    short_name: "Nutriwatt",
+    name: "Nutriwatt - Health & Nutrition Tracking",
     icons,
     display: "minimal-ui",
     id: "/",
     start_url: "/",
-    theme_color: "#FFEDD5",
-    background_color: "#262626",
+    theme_color: "#3A73C1", // Bleu principal
+    background_color: "#F4F4F4", // Blanc cassé
   };
 
   return new Response(JSON.stringify(manifest));

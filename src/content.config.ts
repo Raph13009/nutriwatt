@@ -6,14 +6,14 @@ import { glob } from 'astro/loaders';
 
 const productsCollection = defineCollection({
   loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/products" }),
-    schema: ({ image }) => z.object({
+    schema: z.object({
     title: z.string(),
     description: z.string(),
     main: z.object({
       id: z.number(),
       content: z.string(),
-      imgCard: image(),
-      imgMain: image(),
+      imgCard: z.string(),
+      imgMain: z.string(),
       imgAlt: z.string(),
     }),
     tabs: z.array(
@@ -54,8 +54,8 @@ const productsCollection = defineCollection({
       })
     ).optional(),
     blueprints: z.object({
-      first: image().optional(),
-      second: image().optional(),
+      first: z.string().optional(),
+      second: z.string().optional(),
     }),
   }),
 });

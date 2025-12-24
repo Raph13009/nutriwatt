@@ -1,8 +1,9 @@
 ---
 import { getImage } from "astro:assets";
 import { OG, SEO, SITE } from "@data/constants";
-import faviconSvgSrc from "@images/icon.svg";
-import faviconSrc from "@images/icon.png";
+import nutriwattLogo from "@images/nutriwatt-logo.png";
+// Utiliser le logo Nutriwatt pour les favicons
+const faviconSrc = nutriwattLogo;
 
 // Default properties for the Meta component. These values are used if props are not provided.
 // 'meta' sets a default description meta tag to describe the page content.
@@ -72,16 +73,27 @@ const alternateLanguageLinks: string = Object.entries(languages)
   })
   .join("\n");
 
-// Generate and optimize the favicon images
-const faviconSvg = await getImage({
-  src: faviconSvgSrc,
-  format: "svg",
+// Generate and optimize the favicon images (using PNG since we don't have SVG)
+const faviconPng = await getImage({
+  src: faviconSrc,
+  width: 32,
+  height: 32,
+  format: "png",
 });
 
+// Use Nutriwatt logo for apple touch icon and mobile meta - AGRANDI pour être plus visible
 const appleTouchIcon = await getImage({
-  src: faviconSrc,
-  width: 180,
-  height: 180,
+  src: nutriwattLogo,
+  width: 512,
+  height: 512,
+  format: "png",
+});
+
+// Generate logo for mobile meta tags - AGRANDI pour être plus visible
+const mobileLogo = await getImage({
+  src: nutriwattLogo,
+  width: 1024,
+  height: 1024,
   format: "png",
 });
 ---
@@ -134,9 +146,13 @@ const appleTouchIcon = await getImage({
 
 {/* Links for favicons */}
 <link href="/favicon.ico" rel="icon" sizes="any" type="image/x-icon" />
-<link href={faviconSvg.src} rel="icon" type="image/svg+xml" sizes="any" />
+<link href={faviconPng.src} rel="icon" type="image/png" sizes="32x32" />
 <meta name="mobile-web-app-capable" content="yes" />
 <link href={appleTouchIcon.src} rel="apple-touch-icon" />
 <link href={appleTouchIcon.src} rel="shortcut icon" />
-{/* Set theme color */}
-<meta name="theme-color" content="#facc15" />
+{/* Mobile meta tags with Nutriwatt logo */}
+<meta name="apple-mobile-web-app-title" content={SITE.title} />
+<meta name="application-name" content={SITE.title} />
+<link rel="icon" type="image/png" sizes="512x512" href={mobileLogo.src} />
+{/* Set theme color - Bleu principal Nutriwatt */}
+<meta name="theme-color" content="#3A73C1" />

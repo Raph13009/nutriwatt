@@ -42,7 +42,19 @@ This is the full example:
 
 <!-- Container for tab content that controls visibility and accessibility -->
 <div id={id} role="tabpanel" class={firstClass} aria-labelledby={aria}>
-  <!-- Astro Image component to display the image with dynamic classes based on the 'second' property -->
+  <!-- Image component - supports both public paths (string) and imported images -->
+  {typeof src === 'string' ? (
+    <div class="flex items-center justify-center">
+      <img
+        src={src}
+        alt={alt}
+        class="w-full max-w-[200px] md:max-w-[240px] lg:max-w-[280px] h-auto object-contain drop-shadow-2xl"
+        draggable={"false"}
+        loading={"eager"}
+        style="background: transparent;"
+      />
+    </div>
+  ) : (
   <Image
     src={src}
     alt={alt}
@@ -51,4 +63,5 @@ This is the full example:
     format={"avif"}
     loading={"eager"}
   />
+  )}
 </div>

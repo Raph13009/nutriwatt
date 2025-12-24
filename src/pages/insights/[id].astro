@@ -1,7 +1,8 @@
 ---
-// Import section components
-import { SITE } from "@data/constants";
-import MainLayout from "@/layouts/MainLayout.astro";
+// Rediriger vers la version française
+const { id } = Astro.params;
+return Astro.redirect(`/fr/insights/${id}/`, 301);
+---
 import { Image } from "astro:assets";
 import { getCollection, render } from "astro:content";
 

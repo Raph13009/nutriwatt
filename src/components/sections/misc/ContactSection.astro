@@ -11,7 +11,7 @@ import Icon from "@components/ui/icons/Icon.astro";
 // Define the variables that will be used in this component
 const title: string = "Contact us";
 const subTitle: string =
-  "Have questions or want to discuss a project? Reach out, and let's craft the perfect solution with our tools and services.";
+  "Have questions about our apps or need support? Reach out, and we'll help you on your health and nutrition journey.";
 const formTitle: string = "Fill in the form below";
 const formSubTitle: string = "We'll get back to you in 1-2 business days.";
 ---
@@ -37,28 +37,30 @@ const formSubTitle: string = "We'll get back to you in 1-2 business days.";
         >
           {formTitle}
         </h2>
-        <!-- Form for user input with various input fields.-->
-        <!-- Each field utilizes a different input component for the specific type of input (text, email, phone, and textarea)-->
-        <form>
+        <!-- Simple mailto form -->
+        <form id="contact-form" onsubmit="return handleMailtoSubmit(event)">
           <div class="grid gap-4">
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <TextInput
                 id="hs-firstname-contacts"
                 label="First Name"
-                name="hs-firstname-contacts"
+                name="firstName"
+                required
               />
               <TextInput
                 id="hs-lastname-contacts"
                 label="Last Name"
-                name="hs-firstname-contacts"
+                name="lastName"
+                required
               />
             </div>
-            <EmailContactInput id="hs-email-contacts" />
+            <EmailContactInput id="hs-email-contacts" required />
             <PhoneInput id="hs-phone-number" />
             <TextAreaInput
               id="hs-about-contacts"
               label="Details"
-              name="hs-about-contacts"
+              name="message"
+              required
             />
           </div>
 
@@ -116,3 +118,28 @@ const formSubTitle: string = "We'll get back to you in 1-2 business days.";
     </div>
   </div>
 </section>
+
+<script>
+  function handleMailtoSubmit(event) {
+    event.preventDefault();
+    const form = event.target;
+    const formData = new FormData(form);
+    
+    const firstName = formData.get('firstName') || '';
+    const lastName = formData.get('lastName') || '';
+    const email = formData.get('hs-email-contacts') || '';
+    const phone = formData.get('hs-phone-number') || '';
+    const message = formData.get('message') || '';
+    
+    const subject = encodeURIComponent(`Contact Form - ${firstName} ${lastName}`);
+    const body = encodeURIComponent(
+      `Name: ${firstName} ${lastName}\n` +
+      `Email: ${email}\n` +
+      (phone ? `Phone: ${phone}\n` : '') +
+      `\nMessage:\n${message}`
+    );
+    
+    window.location.href = `mailto:raphaellevy027@gmail.com?subject=${subject}&body=${body}`;
+    return false;
+  }
+</script>

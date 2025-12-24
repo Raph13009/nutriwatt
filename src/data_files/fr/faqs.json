@@ -1,29 +1,29 @@
 {
-  "subTitle": "Posez-nous toutes vos questions sur notre marque et nos produits, et obtenez des réponses factuelles.",
+  "subTitle": "Tout ce que vous devez savoir avant de commencer avec Nutriwatt.",
   "faqs": [
     {
-      "question": "Quels types d'outils sont inclus dans le Kit de Démarrage?",
-      "answer": "Le Kit de Démarrage comprend des outils à main et électriques essentiels pour différents projets de bricolage, notamment des marteaux, des perceuses, des tournevis et une variété de fixations. C'est une sélection soigneusement élaborée pour aider les débutants et les bricoleurs expérimentés à aborder la plupart des tâches d'amélioration de l'habitat."
+      "question": "Quelle est la différence entre Nutriwatt Sport et Nutriwatt ?",
+      "answer": "Nutriwatt Sport est conçue pour les athlètes et les passionnés de sport avec des fonctionnalités avancées incluant l'intégration Strava, le suivi détaillé des nutriments, des recommandations personnalisées et des ajustements nutritionnels basés sur l'activité. Nutriwatt est notre application standard pour un usage quotidien, offrant des fonctionnalités essentielles de suivi nutritionnel dans une interface simple et intuitive, parfaite pour le suivi de santé quotidien normal."
     },
     {
-      "question": "Puis-je passer du Kit de Démarrage à la Boîte à Outils Professionnelle?",
-      "answer": "Absolument ! Vous pouvez passer à la Boîte à Outils Professionnelle à tout moment pour accéder à une gamme plus large d'outils de haute qualité, bénéficier d'un support client prioritaire et recevoir un contenu exclusif. Contactez notre équipe de support pour une transition sans problème."
+      "question": "Comment fonctionne l'intégration Strava dans Nutriwatt Sport ?",
+      "answer": "Nutriwatt Sport se connecte facilement à votre compte Strava pour synchroniser automatiquement vos données d'entraînement. L'application suit les calories brûlées pendant vos activités et ajuste vos recommandations nutritionnelles quotidiennes en fonction de votre activité physique réelle. Cela garantit que vos objectifs nutritionnels s'alignent parfaitement avec votre programme d'entraînement."
     },
     {
-      "question": "Quels sont les rabais disponibles pour les commandes en gros via le plan Boîte à Outils Professionnelle?",
-      "answer": "Les membres de la Boîte à Outils Professionnelle ont droit à des rabais exclusifs sur les commandes en gros, dont le pourcentage peut varier en fonction du volume de la commande. Contactez-nous pour discuter de vos besoins, et nous vous fournirons une structure de rabais personnalisée."
+      "question": "Mes données personnelles et mes informations nutritionnelles sont-elles sécurisées ?",
+      "answer": "Oui, absolument. Nous prenons la confidentialité des données très au sérieux. Toutes vos informations personnelles, journaux nutritionnels et données de santé sont cryptés et stockés en toute sécurité. Nous ne partageons jamais vos données avec des tiers, et vous avez un contrôle total sur vos informations à tout moment."
     },
     {
-      "question": "À quoi puis-je m'attendre en termes de support client?",
-      "answer": "Tous nos clients bénéficient d'un support par e-mail dédié. Avec le Kit de Démarrage, vous recevrez notre support standard, tandis que le plan Boîte à Outils Professionnelle vous mettra à niveau vers un support prioritaire, ce qui signifie des temps de réponse plus rapides et une assistance spécialisée."
+      "question": "Puis-je utiliser Nutriwatt sans être un athlète ?",
+      "answer": "Absolument ! Nutriwatt est conçu pour tout le monde, que vous soyez un athlète professionnel, un passionné de fitness ou simplement quelqu'un qui cherche à améliorer sa nutrition. L'application vous aide à suivre vos repas, comprendre votre apport nutritionnel et faire de meilleurs choix alimentaires, quel que soit votre niveau d'activité."
     },
     {
-      "question": "À quelle fréquence sont mises à jour les ressources en ligne et les tutoriels?",
-      "answer": "Nous mettons régulièrement à jour nos ressources en ligne et nos tutoriels pour refléter les dernières tendances en matière de bricolage et de construction, ainsi que les introductions de nouveaux outils et techniques. Notre matériel vise à être complet et convivial pour tous les niveaux de compétence."
+      "question": "Quelle est la précision des calculs automatiques de nutriments ?",
+      "answer": "Notre application utilise une base de données alimentaire complète avec des informations nutritionnelles vérifiées. Les calculs pour les calories, protéines, glucides, lipides et nutriments essentiels sont basés sur des données nutritionnelles standard. Pour de meilleurs résultats, nous recommandons d'enregistrer vos repas avec précision et d'utiliser la base de données alimentaire de l'application."
     },
     {
-      "question": "ScrewFast propose-t-il des services pour les grands projets de construction?",
-      "answer": "Oui, nos Solutions Entreprise sont conçues pour les grandes entreprises ayant besoin de services complets. Nous fournissons des consultations, de la planification et de l'approvisionnement en outils et matériaux de haute qualité, ainsi que des solutions de personnel pour des besoins de construction importants. Contactez-nous pour un devis personnalisé."
+      "question": "Les applications Nutriwatt sont-elles gratuites ?",
+      "answer": "Oui ! Nutriwatt Sport et Nutriwatt sont entièrement gratuites à télécharger et à utiliser. Nous croyons que tout le monde devrait avoir accès à des outils de suivi nutritionnel de qualité pour soutenir son parcours de santé et de bien-être."
     }
   ]
 }
