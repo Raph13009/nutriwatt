@@ -20,9 +20,9 @@ const TrueFocus = ({
     return part;
   });
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [lastActiveIndex, setLastActiveIndex] = useState(null);
-  const containerRef = useRef(null);
-  const wordRefs = useRef([]);
+  const [lastActiveIndex, setLastActiveIndex] = useState<number | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const wordRefs = useRef<(HTMLSpanElement | null)[]>([]);
   const [focusRect, setFocusRect] = useState({ x: 0, y: 0, width: 0, height: 0 });
 
   useEffect(() => {
@@ -53,7 +53,7 @@ const TrueFocus = ({
     });
   }, [currentIndex, words.length]);
 
-  const handleMouseEnter = index => {
+  const handleMouseEnter = (index: number) => {
     if (manualMode) {
       setLastActiveIndex(index);
       setCurrentIndex(index);
@@ -61,7 +61,7 @@ const TrueFocus = ({
   };
 
   const handleMouseLeave = () => {
-    if (manualMode) {
+    if (manualMode && lastActiveIndex !== null) {
       setCurrentIndex(lastActiveIndex);
     }
   };
@@ -77,7 +77,7 @@ const TrueFocus = ({
         return (
           <span
             key={index}
-            ref={el => (wordRefs.current[index] = el)}
+            ref={el => { wordRefs.current[index] = el; }}
             className={`relative text-3xl font-semibold tracking-tight sm:text-4xl lg:text-6xl cursor-pointer leading-[1.3] ${
               isActive 
                 ? 'bg-gradient-to-r from-[#3A73C1] via-[#6FAFD6] to-[#7ECBC2] bg-clip-text text-transparent' 
@@ -94,12 +94,10 @@ const TrueFocus = ({
                 : isActive
                   ? `blur(0px)`
                   : `blur(${blurAmount}px)`,
-              '--border-color': borderColor,
-              '--glow-color': glowColor,
               transition: `filter ${animationDuration}s ease, background ${animationDuration}s ease`,
               outline: 'none',
               userSelect: 'none'
-            }}
+            } as React.CSSProperties}
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={handleMouseLeave}
           >
@@ -123,7 +121,7 @@ const TrueFocus = ({
         style={{
           '--border-color': borderColor,
           '--glow-color': glowColor
-        }}
+        } as React.CSSProperties}
       >
         <span
           className="absolute w-4 h-4 border-[3px] rounded-[3px] top-[-10px] left-[-10px] border-r-0 border-b-0"

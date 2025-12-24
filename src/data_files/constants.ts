@@ -8,7 +8,7 @@ export const SITE = {
   tagline: "Health & Nutrition Tracking Apps",
   description: "Nutriwatt offers mobile health and nutrition tracking apps to help you achieve your fitness and wellness goals. Track your meals, monitor your progress, and get personalized recommendations.",
   description_short: "Nutriwatt offers mobile health and nutrition tracking apps to help you achieve your fitness and wellness goals.",
-  url: "https://screwfast.uk",
+  url: "https://raph13009.github.io/nutriwatt",
   author: "Raphael Levy",
 };
 
