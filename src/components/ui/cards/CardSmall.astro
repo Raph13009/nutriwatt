@@ -24,29 +24,42 @@ const imageClass =
   class="group relative flex h-48 items-end overflow-hidden rounded-xl shadow-lg outline-hidden ring-zinc-500 focus-visible:ring-3 dark:ring-zinc-200 dark:focus:outline-hidden md:h-80"
 >
   <!-- The product's main image - use screens for preview -->
-  {product.data.main.imgCard === '/covers/cover1.png' ? (
-    /* Use cover1.2 on desktop, cover1 on mobile for Nutriwatt normal */
-    <picture>
-      <source media="(min-width: 768px)" srcset="/covers/cover1.2.png" />
-      <img
-        src="/covers/cover1.png"
-        alt={product.data.main.imgAlt}
-        draggable={"false"}
-        class={imageClass}
-        width="800"
-        height="600"
-      />
-    </picture>
-  ) : (
-    <img
-      src={product.data.main.imgCard}
-      alt={product.data.main.imgAlt}
-      draggable={"false"}
-      class={imageClass}
-      width="800"
-      height="600"
-    />
-  )}
+  {(() => {
+    const base = import.meta.env.BASE_URL;
+    const cover1Path = `${base}/covers/cover1.png`.replace(/\/+/g, '/');
+    const cover1_2Path = `${base}/covers/cover1.2.png`.replace(/\/+/g, '/');
+    
+    if (product.data.main.imgCard === '/covers/cover1.png' || product.data.main.imgCard === cover1Path) {
+      /* Use cover1.2 on desktop, cover1 on mobile for Nutriwatt normal */
+      return (
+        <picture>
+          <source media="(min-width: 768px)" srcset={cover1_2Path} />
+          <img
+            src={cover1Path}
+            alt={product.data.main.imgAlt}
+            draggable={"false"}
+            class={imageClass}
+            width="800"
+            height="600"
+          />
+        </picture>
+      );
+    } else {
+      const imgPath = typeof product.data.main.imgCard === 'string' && product.data.main.imgCard.startsWith('/')
+        ? `${base}${product.data.main.imgCard}`.replace(/\/+/g, '/')
+        : product.data.main.imgCard;
+      return (
+        <img
+          src={imgPath}
+          alt={product.data.main.imgAlt}
+          draggable={"false"}
+          class={imageClass}
+          width="800"
+          height="600"
+        />
+      );
+    }
+  })()}
   <!-- An overlay gradient that sits on top of the product image-->
   <div
     class="pointer-events-none absolute inset-0 bg-linear-to-t from-neutral-800 via-transparent to-transparent opacity-50"

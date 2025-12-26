@@ -42,14 +42,17 @@ export const OG = {
   logo: nutriwattLogo, // Logo simple pour meta tags
 };
 
+// Get base path for assets
+const base = import.meta.env.BASE_URL;
+
 export const partnersData = [
     {
-        icon: `<img src="/partners/strava-logo.png" alt="Strava" class="mx-auto h-auto w-32 py-3 sm:mx-0 lg:w-40 lg:py-5 object-contain" style="background: transparent;" />`,
+        icon: `<img src="${base}/partners/strava-logo.png" alt="Strava" class="mx-auto h-auto w-32 py-3 sm:mx-0 lg:w-40 lg:py-5 object-contain" style="background: transparent;" />`,
         name: "Strava",
         href: "https://www.strava.com",
     },
     {
-        icon: `<img src="/partners/garmin-logo.svg" alt="Garmin" class="mx-auto h-auto w-32 py-3 sm:mx-0 lg:w-40 lg:py-5 object-contain opacity-80 hover:opacity-100 transition-opacity" style="background: transparent;" />`,
+        icon: `<img src="${base}/partners/garmin-logo.svg" alt="Garmin" class="mx-auto h-auto w-32 py-3 sm:mx-0 lg:w-40 lg:py-5 object-contain opacity-80 hover:opacity-100 transition-opacity" style="background: transparent;" />`,
         name: "Garmin",
         href: "https://www.garmin.com",
     },

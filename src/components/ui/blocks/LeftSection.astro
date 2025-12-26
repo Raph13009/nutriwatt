@@ -34,7 +34,7 @@ interface Props {
     />
   ) : typeof img === 'string' ? (
     <img
-      src={img}
+      src={img.startsWith('/') ? `${import.meta.env.BASE_URL}${img}`.replace(/\/+/g, '/') : img}
       alt={imgAlt}
       class="w-full rounded-xl"
       draggable={"false"}

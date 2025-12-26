@@ -24,14 +24,22 @@ const imageClass =
   class="group relative flex h-48 items-end overflow-hidden rounded-lg shadow-xl outline-hidden ring-zinc-500 focus-visible:ring-3 dark:ring-zinc-200 dark:focus:outline-hidden md:col-span-2 md:h-80"
 >
   <!-- The product's main image - use screens for preview -->
-  <img
-    src={product.data.main.imgCard}
-    alt={product.data.main.imgAlt}
-    draggable={"false"}
-    class={imageClass}
-    width="800"
-    height="600"
-  />
+  {(() => {
+    const base = import.meta.env.BASE_URL;
+    const imgPath = typeof product.data.main.imgCard === 'string' && product.data.main.imgCard.startsWith('/')
+      ? `${base}${product.data.main.imgCard}`.replace(/\/+/g, '/')
+      : product.data.main.imgCard;
+    return (
+      <img
+        src={imgPath}
+        alt={product.data.main.imgAlt}
+        draggable={"false"}
+        class={imageClass}
+        width="800"
+        height="600"
+      />
+    );
+  })()}
   <!-- This container includes a gradient overlay over the product's image -->
   <div
     class="pointer-events-none absolute inset-0 bg-linear-to-t from-neutral-800 via-transparent to-transparent opacity-50"

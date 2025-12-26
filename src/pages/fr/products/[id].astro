@@ -29,6 +29,7 @@ export async function getStaticPaths() {
 }
 
 const { product } = Astro.props;
+const base = import.meta.env.BASE_URL;
 
 const pageTitle: string = `${product.data.title} | ${SITE.title}`;
 const metaDescription = product.data.description;
@@ -82,8 +83,8 @@ const ogTitle = `${product.data.title} | Outils Matériels | ScrewFast`;
         {/* Show Strava and Garmin logos for Sport only */}
         {product.id.includes('item-t845') && (
           <div class="mt-6 flex items-center gap-6">
-            <img src="/partners/strava-logo.png" alt="Strava" class="h-8 w-auto opacity-80 hover:opacity-100 transition-opacity" />
-            <img src="/partners/garmin-logo.svg" alt="Garmin" class="h-8 w-auto opacity-80 hover:opacity-100 transition-opacity" />
+            <img src={`${base}/partners/strava-logo.png`} alt="Strava" class="h-8 w-auto opacity-80 hover:opacity-100 transition-opacity" />
+            <img src={`${base}/partners/garmin-logo.svg`} alt="Garmin" class="h-8 w-auto opacity-80 hover:opacity-100 transition-opacity" />
           </div>
         )}
       </div>
@@ -91,7 +92,7 @@ const ogTitle = `${product.data.title} | Outils Matériels | ScrewFast`;
         {typeof product.data.main.imgMain === 'string' && product.data.main.imgMain.startsWith('/') ? (
           <img
             id="fadeInMoveRight"
-            src={product.data.main.imgMain}
+            src={`${base}${product.data.main.imgMain}`.replace(/\/+/g, '/')}
             class="w-full max-w-[280px] sm:max-w-[320px] md:max-w-[360px] h-auto object-contain drop-shadow-2xl"
             alt={product.data.main.imgAlt}
             loading={"eager"}
@@ -261,7 +262,7 @@ const ogTitle = `${product.data.title} | Outils Matériels | ScrewFast`;
         <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <div class="flex items-center justify-center">
             <img
-              src="/screens/screen2.png"
+              src={`${base}/screens/screen2.png`}
               alt="Nutriwatt Sport screen"
               class="w-full max-w-[200px] h-auto object-contain drop-shadow-xl"
               style="background: transparent;"
@@ -269,7 +270,7 @@ const ogTitle = `${product.data.title} | Outils Matériels | ScrewFast`;
           </div>
           <div class="flex items-center justify-center">
             <img
-              src="/screens/screen3.png"
+              src={`${base}/screens/screen3.png`}
               alt="Nutriwatt Sport screen"
               class="w-full max-w-[200px] h-auto object-contain drop-shadow-xl"
               style="background: transparent;"
@@ -277,7 +278,7 @@ const ogTitle = `${product.data.title} | Outils Matériels | ScrewFast`;
           </div>
           <div class="flex items-center justify-center">
             <img
-              src="/screens/screen4.png"
+              src={`${base}/screens/screen4.png`}
               alt="Nutriwatt Sport screen"
               class="w-full max-w-[200px] h-auto object-contain drop-shadow-xl"
               style="background: transparent;"
@@ -285,14 +286,14 @@ const ogTitle = `${product.data.title} | Outils Matériels | ScrewFast`;
           </div>
           <div class="flex items-center justify-center bg-neutral-50 dark:bg-neutral-900 rounded-xl p-6">
             <img
-              src="/partners/strava-logo.png"
+              src={`${base}/partners/strava-logo.png`}
               alt="Strava"
               class="h-12 w-auto opacity-80 hover:opacity-100 transition-opacity"
             />
           </div>
           <div class="flex items-center justify-center bg-neutral-50 dark:bg-neutral-900 rounded-xl p-6">
             <img
-              src="/partners/garmin-logo.svg"
+              src={`${base}/partners/garmin-logo.svg`}
               alt="Garmin"
               class="h-12 w-auto opacity-80 hover:opacity-100 transition-opacity"
             />
@@ -303,7 +304,7 @@ const ogTitle = `${product.data.title} | Outils Matériels | ScrewFast`;
         <div class="grid gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
           <div class="flex items-center justify-center">
             <img
-              src="/screens/screen1.png"
+              src={`${base}/screens/screen1.png`}
               alt="Nutriwatt screen"
               class="w-full max-w-[180px] h-auto object-contain drop-shadow-xl"
               style="background: transparent;"
@@ -311,7 +312,7 @@ const ogTitle = `${product.data.title} | Outils Matériels | ScrewFast`;
           </div>
           <div class="flex items-center justify-center">
             <img
-              src="/screens/screen2.png"
+              src={`${base}/screens/screen2.png`}
               alt="Nutriwatt screen"
               class="w-full max-w-[180px] h-auto object-contain drop-shadow-xl"
               style="background: transparent;"
@@ -319,7 +320,7 @@ const ogTitle = `${product.data.title} | Outils Matériels | ScrewFast`;
           </div>
           <div class="flex items-center justify-center">
             <img
-              src="/screens/screen3.png"
+              src={`${base}/screens/screen3.png`}
               alt="Nutriwatt screen"
               class="w-full max-w-[180px] h-auto object-contain drop-shadow-xl"
               style="background: transparent;"
@@ -327,7 +328,7 @@ const ogTitle = `${product.data.title} | Outils Matériels | ScrewFast`;
           </div>
           <div class="flex items-center justify-center">
             <img
-              src="/screens/screen4.png"
+              src={`${base}/screens/screen4.png`}
               alt="Nutriwatt screen"
               class="w-full max-w-[180px] h-auto object-contain drop-shadow-xl"
               style="background: transparent;"
@@ -335,7 +336,7 @@ const ogTitle = `${product.data.title} | Outils Matériels | ScrewFast`;
           </div>
           <div class="flex items-center justify-center">
             <img
-              src="/screens/screen5.png"
+              src={`${base}/screens/screen5.png`}
               alt="Nutriwatt screen"
               class="w-full max-w-[180px] h-auto object-contain drop-shadow-xl"
               style="background: transparent;"

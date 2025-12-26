@@ -86,7 +86,7 @@ interface Props {
           />
         ) : typeof imgOne === 'string' ? (
           <img
-            src={imgOne}
+            src={imgOne.startsWith('/') ? `${import.meta.env.BASE_URL}${imgOne}`.replace(/\/+/g, '/') : imgOne}
             alt={imgOneAlt}
             class="w-full rounded-xl"
             draggable={"false"}
@@ -116,7 +116,7 @@ interface Props {
           />
         ) : typeof imgTwo === 'string' ? (
           <img
-            src={imgTwo}
+            src={imgTwo.startsWith('/') ? `${import.meta.env.BASE_URL}${imgTwo}`.replace(/\/+/g, '/') : imgTwo}
             alt={imgTwoAlt}
             class="mt-4 w-full rounded-xl lg:mt-10"
             draggable={"false"}
