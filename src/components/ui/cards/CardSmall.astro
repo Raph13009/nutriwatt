@@ -26,10 +26,10 @@ const imageClass =
   <!-- The product's main image - use screens for preview -->
   {(() => {
     const base = import.meta.env.BASE_URL;
-    const cover1Path = `${base}/covers/cover1.png`.replace(/\/+/g, '/');
-    const cover1_2Path = `${base}/covers/cover1.2.png`.replace(/\/+/g, '/');
-    
-    if (product.data.main.imgCard === '/covers/cover1.png' || product.data.main.imgCard === cover1Path) {
+    const cover1Path = `${base}/covers/cover1.avif`.replace(/\/+/g, '/');
+    const cover1_2Path = `${base}/covers/cover1.2.avif`.replace(/\/+/g, '/');
+
+    if (product.data.main.imgCard === '/covers/cover1.png' || product.data.main.imgCard === cover1Path || product.data.main.imgCard === '/covers/cover1.avif') {
       /* Use cover1.2 on desktop, cover1 on mobile for Nutriwatt normal */
       return (
         <picture>
@@ -45,9 +45,14 @@ const imageClass =
         </picture>
       );
     } else {
-      const imgPath = typeof product.data.main.imgCard === 'string' && product.data.main.imgCard.startsWith('/')
-        ? `${base}${product.data.main.imgCard}`.replace(/\/+/g, '/')
-        : product.data.main.imgCard;
+      // Handle both .png and .avif extensions
+      let imgCardPath = product.data.main.imgCard;
+      if (typeof imgCardPath === 'string' && imgCardPath.endsWith('.png')) {
+        imgCardPath = imgCardPath.replace('.png', '.avif');
+      }
+      const imgPath = typeof imgCardPath === 'string' && imgCardPath.startsWith('/')
+        ? `${base}${imgCardPath}`.replace(/\/+/g, '/')
+        : imgCardPath;
       return (
         <img
           src={imgPath}

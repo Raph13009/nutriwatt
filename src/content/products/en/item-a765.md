@@ -5,8 +5,8 @@ main:
   id: 2
   content: |
     Nutriwatt is the perfect app for everyday health and nutrition tracking. Designed for normal daily use, it helps you build healthy habits by tracking your meals, understanding your nutrition, and working toward your wellness goals. Simple, intuitive, and effective for anyone looking to improve their nutrition.
-  imgCard: "/covers/cover1.png"
-  imgMain: "/screens/screen1.png"
+  imgCard: "/covers/cover1.avif"
+  imgMain: "/screens/screen1.avif"
   imgAlt: "Nutriwatt mobile app interface"
 tabs:
   - id: "tabs-with-card-item-1"
@@ -52,6 +52,6 @@ specificationsRight:
   - title: "Mobile Optimized"
     subTitle: "Designed for mobile devices with an intuitive interface that makes tracking your meals quick and convenient."
 blueprints:
-  first: "/screens/screen1.png"
-  second: "/screens/screen2.png"
+  first: "/screens/screen1.avif"
+  second: "/screens/screen2.avif"
 ---

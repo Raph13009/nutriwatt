@@ -49,7 +49,7 @@ const cleanBase = base.endsWith('/') ? base : `${base}/`;
 
 export const partnersData = [
     {
-        icon: `<img src="${cleanBase}partners/strava-logo.png" alt="Strava" class="mx-auto h-auto w-32 py-3 sm:mx-0 lg:w-40 lg:py-5 object-contain" style="background: transparent; display: block;" />`,
+        icon: `<img src="${cleanBase}partners/strava-logo.avif" alt="Strava" class="mx-auto h-auto w-32 py-3 sm:mx-0 lg:w-40 lg:py-5 object-contain" style="background: transparent; display: block;" />`,
         name: "Strava",
         href: "https://www.strava.com",
     },

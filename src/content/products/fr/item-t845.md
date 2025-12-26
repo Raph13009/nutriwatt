@@ -6,8 +6,8 @@ main:
   content: |
     Nutriwatt s'adapte aussi aux sportifs et athlètes souhaitant aller plus loin dans leur suivi nutritionnel.
     En connectant vos entraînements, l'application ajuste automatiquement vos besoins caloriques et nutritionnels en fonction de votre activité réelle.
-  imgCard: "/covers/cover2.png"
-  imgMain: "/screens/screen1.png"
+  imgCard: "/covers/cover2.avif"
+  imgMain: "/screens/screen1.avif"
   imgAlt: "Interface de l'application mobile Nutriwatt Sport"
 tabs:
   - id: "tabs-with-card-item-1"
@@ -54,6 +54,6 @@ specificationsRight:
   - title: "Pensé pour l'entraînement"
     subTitle: "Une expérience fluide, conçue pour être utilisée avant, pendant ou après vos séances."
 blueprints:
-  first: "/screens/screen2.png"
-  second: "/screens/screen3.png"   
+  first: "/screens/screen2.avif"
+  second: "/screens/screen3.avif"   
 ---

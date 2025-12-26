@@ -5,8 +5,8 @@ main:
   id: 1
   content: |
     Nutriwatt Sport is your all-in-one mobile companion designed for athletes and sport enthusiasts. Track everything you eat, automatically calculate nutrients and calories, and get personalized recommendations that sync with your Strava workouts. Perfect for those who want to optimize their nutrition based on their actual physical activity.
-  imgCard: "/covers/cover2.png"
-  imgMain: "/screens/screen1.png"
+  imgCard: "/covers/cover2.avif"
+  imgMain: "/screens/screen1.avif"
   imgAlt: "Nutriwatt Sport mobile app interface"
 tabs:
   - id: "tabs-with-card-item-1"
@@ -52,6 +52,6 @@ specificationsRight:
   - title: "Mobile-First Design"
     subTitle: "Beautiful, intuitive interface designed specifically for mobile devices, making it easy to log meals and track progress on the go."
 blueprints:
-  first: "/screens/screen2.png"
-  second: "/screens/screen3.png"   
+  first: "/screens/screen2.avif"
+  second: "/screens/screen3.avif"   
 ---

@@ -6,8 +6,8 @@ main:
   content: |
     Nutriwatt est une application simple et intuitive pour suivre votre alimentation au quotidien.
     Elle vous aide à comprendre ce que vous mangez, à suivre vos calories et macronutriments, et à construire de meilleures habitudes alimentaires, sans complexité.
-  imgCard: "/covers/cover1.png"
-  imgMain: "/screens/screen1.png"
+  imgCard: "/covers/cover1.avif"
+  imgMain: "/screens/screen1.avif"
   imgAlt: "Interface de l'application mobile Nutriwatt"
 tabs:
   - id: "tabs-with-card-item-1"
@@ -54,6 +54,6 @@ specificationsRight:
   - title: "Pensé pour le quotidien"
     subTitle: "Une expérience fluide et rapide, adaptée à un usage quotidien sur mobile."
 blueprints:
-  first: "/screens/screen1.png"
-  second: "/screens/screen2.png"
+  first: "/screens/screen1.avif"
+  second: "/screens/screen2.avif"
 ---
