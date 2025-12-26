@@ -1,5 +1,19 @@
 ---
 // Rediriger vers la version française
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const products = await getCollection("products", ({ id }) =>
+    id.startsWith("en/")
+  );
+  return products.map((product) => {
+    const idWithoutLang = product.id.replace(/^en\//, "");
+    return {
+      params: { id: idWithoutLang },
+    };
+  });
+}
+
 const { id } = Astro.params;
 return Astro.redirect(`/fr/products/${id}/`, 301);
 ---

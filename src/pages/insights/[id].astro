@@ -1,5 +1,19 @@
 ---
 // Rediriger vers la version française
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const insights = await getCollection("insights", ({ id }) =>
+    id.startsWith("en/")
+  );
+  return insights.map((insight) => {
+    const idWithoutLang = insight.id.replace(/^en\//, "");
+    return {
+      params: { id: idWithoutLang },
+    };
+  });
+}
+
 const { id } = Astro.params;
 return Astro.redirect(`/fr/insights/${id}/`, 301);
 ---
