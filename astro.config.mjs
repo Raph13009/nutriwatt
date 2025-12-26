@@ -7,14 +7,13 @@ import react from "@astrojs/react";
 
 import mdx from "@astrojs/mdx";
 
-// Determine if we're building for production (GitHub Pages)
-const isProduction = process.env.GITHUB_PAGES === 'true' || process.env.NODE_ENV === 'production';
-
 // https://astro.build/config
 export default defineConfig({
-  // GitHub Pages configuration - only use base path when building for production
-  base: isProduction ? "/nutriwatt" : "/",
+  // GitHub Pages configuration
+  // Only use base path in production (when building for GitHub Pages)
+  // In development, base is undefined so the site works at localhost:4321
   site: "https://raph13009.github.io",
+  base: import.meta.env.DEV ? undefined : "/nutriwatt",
   // https://docs.astro.build/en/guides/images/#authorizing-remote-images
   image: {
     domains: ["images.unsplash.com"],

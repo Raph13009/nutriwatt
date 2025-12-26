@@ -5,9 +5,8 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "GITHUB_PAGES=true astro build && node process-html.mjs",
+    "build": "astro build",
     "preview": "astro preview",
-    "deploy": "npm run build && gh-pages -d dist",
     "astro": "astro"
   },
   "dependencies": {
