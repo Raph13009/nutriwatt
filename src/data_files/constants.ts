@@ -1,4 +1,4 @@
-import ogImageSrc from "@images/social.png";
+import ogImageSrc from "@images/social2.png";
 import nutriwattLogo from "@images/nutriwatt-logo.png";
 
 
