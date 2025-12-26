@@ -10,7 +10,7 @@ interface Props {
 }
 // Define CSS classes for styling the button
 const baseClasses =
-  "group inline-flex items-center justify-center gap-x-2 rounded-lg px-4 py-3 text-sm font-bold text-neutral-50 ring-zinc-500 transition duration-300 focus-visible:ring-3 outline-hidden";
+  "group inline-flex items-center justify-center gap-x-2 rounded-lg px-4 py-3 text-sm font-bold text-neutral-50 ring-zinc-500 transition duration-300 focus-visible:ring-3 outline-hidden text-center";
 const borderClasses = "border border-transparent";
 const bgColorClasses =
   "bg-[#3A73C1] hover:bg-[#2D5A96] active:bg-[#2D5A96] dark:focus:outline-hidden";
@@ -23,8 +23,9 @@ const ringClasses = "dark:ring-zinc-200";
 <a
   class={`${baseClasses} ${borderClasses} ${bgColorClasses} ${disableClasses} ${fontSizeClasses} ${ringClasses}`}
   href={url}
+  style="text-align: center;"
 >
-  {title}
+  <span class="block text-center w-full">{title}</span>
   <!-- Display the arrow based on the 'noArrow' property -->
 
   {noArrow ? null : <Icon name="arrowRight" />}

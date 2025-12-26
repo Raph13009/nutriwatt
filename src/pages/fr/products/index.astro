@@ -22,7 +22,7 @@ const product: CollectionEntry<"products">[] = (
 );
 
 // Define variables for page content
-const title: string = "Télécharger Nutriwatt";
+const title: string = "Une App, Deux usages";
 const subTitle: string =
   "Nutriwatt est une application unique qui s'adapte à votre usage. Que vous souhaitiez simplement suivre votre alimentation ou optimiser votre nutrition sportive avec Strava, l'app évolue avec vous.";
 
@@ -31,33 +31,33 @@ const testimonials = [
   {
     content:
       " \"Nutriwatt Sport a complètement transformé ma façon d'aborder la nutrition et l'entraînement. L'intégration Strava est transparente et j'adore comment l'app ajuste automatiquement mes besoins en calories en fonction de mes entraînements. Enfin une app qui comprend les athlètes !\" ",
-    author: "Sarah Martinez",
-    role: "Marathonienne | Passionnée de Fitness",
+    author: "David Martinez",
+    role: "Marathonien | Passionné de Fitness",
     avatarSrc:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
     avatarAlt: "Image Description",
   },
   {
     content:
-      " \"En tant que débutant dans le suivi nutritionnel, Nutriwatt était parfait pour moi. C'est simple, intuitif et ne me submerge pas avec des fonctionnalités dont je n'ai pas besoin. J'ai perdu 7 kilos en 3 mois et je comprends enfin ce que je mange !\" ",
-    author: "Michael Chen",
-    role: "Débutant en Santé",
+      " \"En tant que débutante dans le suivi nutritionnel, Nutriwatt était parfait pour moi. C'est simple, intuitif et ne me submerge pas avec des fonctionnalités dont je n'ai pas besoin. J'ai perdu 7 kilos en 3 mois et je comprends enfin ce que je mange !\" ",
+    author: "Sophie Chen",
+    role: "Débutante en Santé",
     avatarSrc:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
     avatarAlt: "Image Description",
   },
   {
     content:
       " \"La fonctionnalité de calcul automatique des nutriments est révolutionnaire. Je n'ai plus besoin de tout calculer manuellement, et l'app me dit exactement ce que je dois améliorer. Les recommandations sont parfaites et m'ont aidé à atteindre mes objectifs de fitness plus rapidement que je ne l'aurais jamais imaginé.\" ",
-    author: "Emily Johnson",
+    author: "Thomas Johnson",
     role: "Coach Personnel | Coach Nutrition",
     avatarSrc:
-      "https://images.unsplash.com/photo-1474176857210-7287d38d27c6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
     avatarAlt: "Image Description",
   },
 ];
 
-const pageTitle = "Télécharger Nutriwatt | Nutriwatt";
+const pageTitle = "Une App, Deux usages | Nutriwatt";
 const metaDescription =
   "Nutriwatt est une application unique qui s'adapte à votre usage. Que vous souhaitiez simplement suivre votre alimentation ou optimiser votre nutrition sportive avec Strava, l'app évolue avec vous.";
 const ogTitle = "Applications Santé & Nutrition | Nutriwatt";
@@ -89,10 +89,10 @@ const ogTitle = "Applications Santé & Nutrition | Nutriwatt";
   <div
     class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
   >
-    <div class="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12">
+    <div class="mb-4 flex flex-col items-center gap-6 sm:mb-8 md:mb-12 md:flex-row md:justify-between md:gap-8">
       <div class="flex items-center gap-12">
         <h1
-          class="text-2xl font-bold tracking-tight text-balance text-neutral-800 md:text-4xl md:leading-tight dark:text-neutral-200"
+          class="text-2xl font-bold tracking-tight text-balance md:text-4xl md:leading-tight bg-gradient-to-r from-[#3A73C1] via-[#6FAFD6] to-[#7ECBC2] bg-clip-text text-transparent"
         >
           {title}
         </h1>
@@ -104,11 +104,13 @@ const ogTitle = "Applications Santé & Nutrition | Nutriwatt";
           )
         }
       </div>
-      <PrimaryCTA
-        title="Histoires de clients"
-        url="#testimonials"
-        noArrow={true}
-      />
+      <div class="flex w-full justify-center md:w-auto md:justify-end">
+        <PrimaryCTA
+          title="Ils utilisent Nutriwatt"
+          url="#testimonials"
+          noArrow={true}
+        />
+      </div>
     </div>
     {/* Displaying products in alternating styles. Alternative product gets different card styling. */}
     {/* Maps through all product entries and displays them with either CardSmall or CardWide based on their position. */}
