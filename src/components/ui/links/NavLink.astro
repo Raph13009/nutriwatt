@@ -1,6 +1,11 @@
 ---
 // Destructure the properties from Astro.props
 const { url, name } = Astro.props;
+const base = import.meta.env.BASE_URL;
+// Ensure base ends with / and clean up double slashes
+const cleanBase = base.endsWith('/') ? base : `${base}/`;
+// Prefix URL with base path
+const prefixedUrl = url.startsWith('/') ? `${cleanBase}${url.slice(1)}`.replace(/\/+/g, '/') : url;
 
 // Define TypeScript interface for the properties
 interface Props {
@@ -16,36 +21,50 @@ We assign an ID matching the URL for easy reference in our script.
 If URL is '/' (home page), assign ID as 'home' 
 -->
 <a
-  id={url === "/" ? "home" : url.replace("/", "")}
-  href={url}
+  id={url === "/" || url === "/fr" ? "home" : url.replace("/", "").replace(/\//g, "-")}
+  href={prefixedUrl}
   data-astro-prefetch
+  data-original-url={url}
   class="rounded-lg text-base font-medium text-neutral-600 outline-hidden ring-zinc-500 hover:text-[#3A73C1] focus-visible:ring-3 dark:text-neutral-400 dark:ring-zinc-200 dark:hover:text-[#6FAFD6] dark:focus:outline-hidden md:py-3 md:text-sm 2xl:text-base"
 >
   {name}
 </a>
 
-<script>
+<script define:vars={{ baseUrl: base, originalUrl: url }}>
   document.addEventListener("DOMContentLoaded", function () {
-    let url = window.location.pathname;
-    let navId;
-
-    if (url === "/") {
-      navId = "home";
-    } else {
-      navId = url.replace("/", "");
+    const base = baseUrl || '/';
+    const cleanBase = base.endsWith('/') ? base.slice(0, -1) : base;
+    let currentPath = window.location.pathname;
+    
+    // Remove base path from current URL for comparison
+    if (cleanBase && currentPath.startsWith(cleanBase)) {
+      currentPath = currentPath.slice(cleanBase.length) || '/';
     }
-
-    let nav = document.getElementById(navId);
-
-    if (nav) {
-      nav.classList.remove(
-        "text-neutral-600",
-        "dark:text-neutral-400",
-        "hover:text-[#3A73C1]",
-        "dark:hover:text-[#6FAFD6]"
-      );
-      nav.classList.add("text-[#3A73C1]", "dark:text-[#6FAFD6]");
-      nav.setAttribute("aria-current", "page");
-    }
+    
+    // Get all nav links
+    const navLinks = document.querySelectorAll('a[data-original-url]');
+    
+    navLinks.forEach((link) => {
+      const linkOriginalUrl = link.getAttribute('data-original-url');
+      const linkPath = linkOriginalUrl || '/';
+      
+      // Normalize paths for comparison
+      const normalizedCurrent = currentPath.replace(/\/$/, '') || '/';
+      const normalizedLink = linkPath.replace(/\/$/, '') || '/';
+      
+      // Check if current path matches link path
+      if (normalizedCurrent === normalizedLink || 
+          (normalizedCurrent === '/' && (normalizedLink === '/' || normalizedLink === '/fr')) ||
+          (normalizedCurrent === '/fr' && normalizedLink === '/fr')) {
+        link.classList.remove(
+          "text-neutral-600",
+          "dark:text-neutral-400",
+          "hover:text-[#3A73C1]",
+          "dark:hover:text-[#6FAFD6]"
+        );
+        link.classList.add("text-[#3A73C1]", "dark:text-[#6FAFD6]");
+        link.setAttribute("aria-current", "page");
+      }
+    });
   });
 </script>

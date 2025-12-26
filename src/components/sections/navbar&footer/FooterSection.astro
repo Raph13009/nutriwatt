@@ -8,6 +8,19 @@ import { SITE } from "@data/constants";
 
 // Select the correct translation based on the page's lang prop:
 const strings = Astro.currentLocale === "fr" ? frStrings : enStrings;
+const base = import.meta.env.BASE_URL;
+const cleanBase = base.endsWith('/') ? base : `${base}/`;
+
+// Helper function to prefix URLs with base path
+function prefixUrl(url: string): string {
+  if (url.startsWith('http://') || url.startsWith('https://')) {
+    return url; // External URLs, don't prefix
+  }
+  if (url.startsWith('/')) {
+    return `${cleanBase}${url.slice(1)}`.replace(/\/+/g, '/');
+  }
+  return url;
+}
 ---
 
 <footer class="w-full bg-neutral-300 dark:bg-neutral-900">
@@ -35,7 +48,7 @@ const strings = Astro.currentLocale === "fr" ? frStrings : enStrings;
               {section.links.map((link, index) => (
                 <li>
                   <a
-                    href={link.url}
+                    href={prefixUrl(link.url)}
                     class="inline-flex gap-x-2 rounded-lg text-neutral-600 outline-hidden ring-zinc-500 transition duration-300 hover:text-neutral-500 focus-visible:ring-3 dark:text-neutral-400 dark:ring-zinc-200 dark:hover:text-neutral-300 dark:focus:outline-hidden"
                   >
                     {link.name}
